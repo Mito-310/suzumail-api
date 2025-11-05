@@ -107,8 +107,12 @@ if handler:
             else:
                 reply_text = "まだ登録されていません。\n「登録」と送信して登録してください。"
                 
+        # User ID確認
+        elif text == "ID確認" or text == "id確認":
+            reply_text = f"あなたのUser ID:\n{user_id}\n\nこのIDをESP32に設定してください。"
+            
         else:
-            reply_text = "コマンド一覧:\n・登録: 新規登録\n・状態: 現在の状態確認"
+            reply_text = "コマンド一覧:\n・登録: 新規登録\n・状態: 現在の状態確認\n・ID確認: User IDを表示"
         
         try:
             line_bot_api.reply_message(
